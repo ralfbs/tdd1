@@ -8,6 +8,7 @@
     }
   },
   "require": {
-    "phing/phing": "^2.12"
+    "phing/phing": "^2.12",
+    "sebastian/git": "^2.0"
   }
 }

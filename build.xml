@@ -4,7 +4,11 @@
 
     <php expression="include('vendor/autoload.php')"/>
 
-    <target name="build" depends="build-composer,build-unittest, build-coverage, Erfolgsmeldung"/>
+    <target name="build" depends="deploy-git-pull,build-composer,build-unittest, build-coverage, Erfolgsmeldung"/>
+
+    <target name="deploy-git-pull">
+        <exec command="git pull"/>
+    </target>
 
     <target name="build-composer" description="Install composer packages with composer">
         <exec logoutput="true"
