@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="TDD Beispiel" default="build">
+
+    <php expression="include('vendor/autoload.php')"/>
+
+    <target name="build" depends="build-composer,build-unittest, build-coverage, Erfolgsmeldung"/>
+
+    <target name="build-composer" description="Install composer packages with composer">
+        <exec logoutput="true"
+              command="composer install"/>
+
+    </target>
+
+    <target name="build-unittest">
+        <phpunit printsummary="true" haltonerror="true" haltonfailure="true">
+            <batchtest>
+                <fileset dir="Tests">
+                    <include name="*Test.php"/>
+                </fileset>
+            </batchtest>
+        </phpunit>
+    </target>
+
+    <target name="build-coverage" depends="build-unittest" description="Run unit tests with PHPUnit">
+        <exec passthru="true" command="vendor\bin\phpunit Tests
+        --coverage-html Build/coverage"/>
+    </target>
+
+    <target name="Erfolgsmeldung" depends="build-unittest">
+        <echo>Erfolg!</echo>
+
+    </target>
+
+</project>

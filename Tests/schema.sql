@@ -1,0 +1,4 @@
+CREATE TABLE "Users" (
+  "email" VARCHAR(255) UNIQUE NOT NULL,
+  "code"  VARCHAR(255)
+);

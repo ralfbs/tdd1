@@ -1,5 +1,7 @@
 <?php
 
+namespace Application;
+
 /**
  * TDD
  *
@@ -12,7 +14,7 @@ class Config
 
     public static $values = array();
 
-    public function init(array $values)
+    public static function init(array $values)
     {
         self::$values = $values;
     }
