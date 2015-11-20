@@ -22,7 +22,7 @@ class Config
     public static function get($key)
     {
         if (!isset(self::$values[$key])) {
-            throw new Exception ('Schlüssel nicht gefunden');
+            throw new \Exception ('Schlüssel nicht gefunden');
         }
         return self::$values[$key];
     }
