@@ -1,4 +1,5 @@
 {
+  "name": "ralfbs/tdd1",
   "require-dev": {
     "phpunit/phpunit": "^5.0"
   },
