@@ -4,7 +4,7 @@
 
     <php expression="include('vendor/autoload.php')"/>
 
-    <target name="build" depends="deploy-git-pull,build-composer,build-unittest, build-coverage, Erfolgsmeldung"/>
+    <target name="build" depends="build-unittest, build-coverage, Erfolgsmeldung"/>
 
     <target name="deploy-git-pull">
         <exec command="git pull" passthru="true"/>
