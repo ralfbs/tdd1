@@ -6,15 +6,6 @@
 
     <target name="build" depends="build-unittest, build-coverage, Erfolgsmeldung"/>
 
-    <target name="deploy-git-pull">
-        <exec command="git pull" passthru="true"/>
-    </target>
-
-    <target name="build-composer" description="Install composer packages with composer">
-        <exec logoutput="true"
-              command="composer install"/>
-
-    </target>
 
     <target name="build-unittest">
         <phpunit printsummary="true" haltonerror="true" haltonfailure="true">
